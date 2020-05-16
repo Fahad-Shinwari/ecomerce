@@ -29,7 +29,7 @@ export const CartContextProvider=(props)=> {
         setCart(cart.filter(item => item.id !== id))
     }
     return (
-            <CartContext.Provider value={{addToCart,cart,deleteCart}}>
+            <CartContext.Provider value={{addToCart,cart,deleteCart,addIncrement}}>
               {props.children}
             </CartContext.Provider>
     
