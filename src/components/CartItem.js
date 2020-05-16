@@ -2,7 +2,7 @@ import React,{useContext} from 'react'
 import { CartContext } from '../contexts/CartContext'
 
 export const CartItem = ({name,img,tprice,id,count}) => {
-    const {deleteCart}= useContext(CartContext)
+    const {deleteCart,addIncrement}= useContext(CartContext)
     // let price = cart.map(item=>item.price)
     // let total=price.reduce((a,c)=>a+c,0).toFixed(2)
     //console.log(tprice);
@@ -28,7 +28,11 @@ export const CartItem = ({name,img,tprice,id,count}) => {
           </strong>
         </div>
         <div className="col-10 mx-auto col-lg-2 my-2 my-lg-0 ">
+        
           <div className="d-flex justify-content-center">
+          <div className=" cart-icon" onClick={() => addIncrement(id)} >
+            <i className="fa fa-plus" style={{marginRight:'15px'}}/>
+          </div>
             {count}
           <div className="col-10 mx-auto col-lg-2 ">
           <div className=" cart-icon" onClick={() => deleteCart(id)} >
